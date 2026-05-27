@@ -124,13 +124,16 @@ async function handleFormSubmit(event) {
 
   try {
     // 发送到 Cloudflare Worker
-    const response = await fetch(CF_WORKER_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://clinic-booking-api.jiabeijk.workers.dev",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       },
-      body: JSON.stringify(formData),
-    });
+    );
 
     if (!response.ok) {
       throw new Error("提交失败，请重试");
