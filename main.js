@@ -148,9 +148,20 @@ async function handleFormSubmit(event) {
     console.error("提交错误:", error);
     alert("提交失败，请稍后重试。如果问题持续，请直接电话联系陈姐。");
   } finally {
-    // 恢复提交按钮
-    submitBtn.disabled = false;
-    submitBtn.textContent = "提交预约";
+    // 开启 60 秒冷却倒计时
+    let countdown = 60;
+    submitBtn.textContent = `操作频繁 (${countdown}s)`;
+
+    const timer = setInterval(() => {
+      countdown--;
+      if (countdown <= 0) {
+        clearInterval(timer);
+        submitBtn.disabled = false; // 60秒后才能再次点击
+        submitBtn.textContent = "提交预约";
+      } else {
+        submitBtn.textContent = `操作频繁 (${countdown}s)`;
+      }
+    }, 1000);
   }
 }
 
