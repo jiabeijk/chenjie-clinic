@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>陈姐理疗室 - 卸下疲惫，从这里开始</title>
+    <meta
+      name="description"
+      content="专注亚健康调理，首次理疗0元体验，后续仅需50元/次。"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4A373",
+              "primary-dark": "#B8864E",
+              secondary: "#8A9A5B",
+              cream: "#FAFAFA",
+              "warm-gray": "#F5F0EB",
+            },
+            fontFamily: {
+              sans: ["system-ui", "-apple-system", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream text-gray-800 font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a
+            href="#"
+            class="text-2xl md:text-3xl font-extrabold text-[#B8864E] leading-tight tracking-wide"
+            >陈姐·理疗室</a
+          >
+
+          <!-- 桌面端导航 -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >服务宗旨</a
+            >
+            <a
+              href="#science"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >仪器介绍</a
+            >
+            <a
+              href="#booking"
+              class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-dark transition-colors"
+              >立即预约</a
+            >
+          </div>
+
+          <!-- 移动端菜单按钮 -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-primary transition-colors py-2"
+              >服务宗旨</a
+            >
+            <a
+              href="#science"
+              class="text-gray-700 hover:text-primary transition-colors py-2"
+              >仪器介绍</a
+            >
+            <a
+              href="#booking"
+              class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-dark transition-colors text-center"
+              >立即预约</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 首屏视觉区 -->
+    <section
+      id="hero"
+      class="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-warm-gray to-cream"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 fade-in-up"
+        >
+          陈姐理疗室：卸下疲惫，从这里开始
+        </h1>
+        <p
+          class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in-up"
+        >
+          专注亚健康调理。我们不讲虚无缥缈的故事，只用实在的手法和专业的仪器，为您疏通经络、缓解酸痛。
+        </p>
+
+        <!-- 超级福利 -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 max-w-xl mx-auto border-2 border-primary fade-in-up"
+        >
+          <p class="text-xl sm:text-2xl font-semibold text-gray-900">
+            🎁 新客专属福利
+          </p>
+          <p class="text-3xl sm:text-4xl font-bold text-primary mt-2">
+            首次理疗 <span class="text-5xl">0元</span> 体验！
+          </p>
+          <p class="text-lg text-gray-600 mt-2">
+            后续仅需 <span class="font-bold text-gray-900">50元/次</span>
+          </p>
+        </div>
+
+        <a
+          href="#booking"
+          class="inline-block bg-primary text-white text-lg px-8 py-4 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 fade-in-up"
+        >
+          免费预约体验
+        </a>
+      </div>
+    </section>
+
+    <!-- 核心优势与信任建立 -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12 fade-in-up"
+        >
+          为什么选择陈姐理疗室？
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 卡片1：价格透明 -->
+          <div
+            class="bg-warm-gray rounded-2xl p-8 text-center fade-in-up hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">价格透明</h3>
+            <p class="text-gray-600">
+              拒绝套路，没有隐形消费，明码标价。让您安心享受每一次服务。
+            </p>
+          </div>
+
+          <!-- 卡片2：专注亚健康 -->
+          <div
+            class="bg-warm-gray rounded-2xl p-8 text-center fade-in-up hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">专注亚健康</h3>
+            <p class="text-gray-600">
+              针对肩颈僵硬、腰背酸痛提供日常舒缓，帮您找回轻松状态。
+            </p>
+          </div>
+
+          <!-- 卡片3：街坊口碑 -->
+          <div
+            class="bg-warm-gray rounded-2xl p-8 text-center fade-in-up hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">街坊口碑</h3>
+            <p class="text-gray-600">
+              社区里的放松驿站，像老朋友一样亲切。口碑相传，值得信赖。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 理疗室环境展示 -->
+    <section class="py-20 bg-warm-gray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12 fade-in-up"
+        >
+          舒适环境，安心体验
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-stone-100 rounded-2xl h-64 flex items-center justify-center fade-in-up"
+          >
+            <p class="text-gray-500 text-lg">理疗室环境图占位</p>
+          </div>
+          <div
+            class="bg-stone-100 rounded-2xl h-64 flex items-center justify-center fade-in-up"
+          >
+            <p class="text-gray-500 text-lg">理疗室环境图占位</p>
+          </div>
+          <div
+            class="bg-stone-100 rounded-2xl h-64 flex items-center justify-center fade-in-up"
+          >
+            <p class="text-gray-500 text-lg">理疗室环境图占位</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 仪器与原理介绍 -->
+    <section id="science" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4 fade-in-up"
+        >
+          专业仪器，科学调理
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto fade-in-up">
+          我们采用现代化理疗设备，结合传统中医理论，为您提供安全有效的调理服务。
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- 仪器图片占位 -->
+          <div
+            class="bg-stone-100 rounded-2xl h-80 flex items-center justify-center fade-in-up"
+          >
+            <p class="text-gray-500 text-lg">理疗仪器图占位</p>
+          </div>
+
+          <!-- 仪器说明 -->
+          <div class="space-y-8">
+            <div class="bg-warm-gray rounded-2xl p-6 fade-in-up">
+              <h3
+                class="text-xl font-semibold text-gray-900 mb-3 flex items-center"
+              >
+                <span class="w-2 h-8 bg-primary rounded-full mr-4"></span>
+                仪器特性
+              </h3>
+              <p class="text-gray-700 leading-relaxed pl-6">
+                多配备8个按摩触点，通过旋转、按压或微电流刺激，能轻易将力道推至深层经络，适合肩颈部、背部、腹部及腿部。
+              </p>
+            </div>
+
+            <div class="bg-warm-gray rounded-2xl p-6 fade-in-up">
+              <h3
+                class="text-xl font-semibold text-gray-900 mb-3 flex items-center"
+              >
+                <span class="w-2 h-8 bg-secondary rounded-full mr-4"></span>
+                中医原理
+              </h3>
+              <p class="text-gray-700 leading-relaxed pl-6">
+                旨在疏通气血，常用于刺激人体特定的经络与穴位，以达到缓解肌肉疲劳与舒缓病痛的效用。
+              </p>
+            </div>
+
+            <div class="bg-warm-gray rounded-2xl p-6 fade-in-up">
+              <h3
+                class="text-xl font-semibold text-gray-900 mb-3 flex items-center"
+              >
+                <span class="w-2 h-8 bg-primary rounded-full mr-4"></span>
+                主要作用
+              </h3>
+              <p class="text-gray-700 leading-relaxed pl-6">
+                结合现代科技与中医经络理论，用于全身肌肉放松、经络疏通及气血循环。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 预约与留言系统 -->
+    <section
+      id="booking"
+      class="py-20 bg-gradient-to-b from-cream to-warm-gray"
+    >
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4 fade-in-up"
+        >
+          预约您的免费体验
+        </h2>
+        <p class="text-center text-gray-600 mb-12 fade-in-up">
+          填写以下信息，陈姐会尽快与您联系确认预约时间。
+        </p>
+
+        <form
+          id="booking-form"
+          class="bg-white rounded-2xl shadow-lg p-8 space-y-6 fade-in-up"
+        >
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >姓名</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              placeholder="请输入您的姓名"
+            />
+          </div>
+
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >手机号码</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="[0-9]{11}"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              placeholder="请输入11位手机号码"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="date"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >期望到店日期</label
+              >
+              <input
+                type="date"
+                id="date"
+                name="date"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              />
+            </div>
+            <div>
+              <label
+                for="time"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >期望到店时间</label
+              >
+              <select
+                id="time"
+                name="time"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              >
+                <option value="">请选择时间段</option>
+                <option value="09:00-10:00">09:00 - 10:00</option>
+                <option value="10:00-11:00">10:00 - 11:00</option>
+                <option value="11:00-12:00">11:00 - 12:00</option>
+                <option value="14:00-15:00">14:00 - 15:00</option>
+                <option value="15:00-16:00">15:00 - 16:00</option>
+                <option value="16:00-17:00">16:00 - 17:00</option>
+                <option value="17:00-18:00">17:00 - 18:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >简单留言（选填）</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none"
+              placeholder="如有特殊需求或身体状况，请在此说明"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full bg-primary text-white text-lg py-4 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            提交预约
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xl font-semibold mb-4">陈姐理疗室</p>
+        <p class="text-gray-400 mb-2">社区里的放松驿站，为您卸下每日疲惫</p>
+        <p class="text-gray-500 text-sm">
+          &copy; 2026 陈姐理疗室. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- 预约成功模态框 -->
+    <div
+      id="success-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+    >
+      <div
+        class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        id="modal-backdrop"
+      ></div>
+      <div
+        class="relative bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300"
+        id="modal-content"
+      >
+        <div class="text-center">
+          <div
+            class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <svg
+              class="w-10 h-10 text-green-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">预约成功！</h3>
+          <p class="text-gray-600 mb-6">
+            陈姐会尽快与您联系，确认您的预约时间。期待为您提供舒适的理疗体验！
+          </p>
+          <button
+            id="modal-close-btn"
+            class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary-dark transition-colors"
+          >
+            好的，知道了
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
