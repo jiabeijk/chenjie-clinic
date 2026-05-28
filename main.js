@@ -124,7 +124,7 @@ async function handleFormSubmit(event) {
 
   try {
     // 发送到 Cloudflare Worker
-    const response = await fetch("/", {
+    const response = await fetch("https://api.ipeep.art", {
       // ✅ 改为 "/"
       method: "POST",
       headers: {
