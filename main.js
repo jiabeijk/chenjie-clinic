@@ -3,7 +3,7 @@
 // ==========================================
 
 // Cloudflare Worker URL 占位符
-const CF_WORKER_URL = "https://clinic-booking-api.jiabeijk.workers.dev/";
+const CF_WORKER_URL = "https://api.ipeep.art";
 
 // DOM 元素引用
 const navbar = document.getElementById("navbar");
