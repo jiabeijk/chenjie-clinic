@@ -2,13 +2,9 @@
 <html lang="zh-CN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="./output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-      async
-      defer
-    ></script> -->
+
     <title>陈姐理疗室 - 卸下疲惫，从这里开始</title>
     <meta
       name="description"
@@ -16,25 +12,8 @@
     />
     <!-- <script src="https://cdn.tailwindcss.com"></script>   -->
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#D4A373",
-              "primary-dark": "#B8864E",
-              secondary: "#8A9A5B",
-              cream: "#FAFAFA",
-              "warm-gray": "#F5F0EB",
-            },
-            fontFamily: {
-              sans: ["system-ui", "-apple-system", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
   </head>
+
   <body class="bg-cream text-gray-800 font-sans antialiased">
     <!-- 导航栏 -->
     <nav
@@ -305,7 +284,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- 仪器图片 -->
           <div
-            class="bg-stone-100 rounded-2xl h-100 overflow-hidden fade-in-up"
+            class="bg-stone-100 rounded-2xl h-96 lg:h-[500px] overflow-hidden fade-in-up"
           >
             <img
               src="images/jly.webp"
