@@ -2,38 +2,19 @@
 <html lang="zh-CN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+
+    <link href="dist/output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-      async
-      defer
-    ></script> -->
+
     <title>陈姐理疗室 - 卸下疲惫，从这里开始</title>
     <meta
       name="description"
       content="专注亚健康调理，首次理疗0元体验，后续仅需50元/次。"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script>   -->
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#D4A373",
-              "primary-dark": "#B8864E",
-              secondary: "#8A9A5B",
-              cream: "#FAFAFA",
-              "warm-gray": "#F5F0EB",
-            },
-            fontFamily: {
-              sans: ["system-ui", "-apple-system", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
   </head>
+
   <body class="bg-cream text-gray-800 font-sans antialiased">
     <!-- 导航栏 -->
     <nav
@@ -303,7 +284,9 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- 仪器图片 -->
-          <div class="bg-stone-100 rounded-2xl h-80 overflow-hidden fade-in-up">
+          <div
+            class="bg-stone-100 rounded-2xl h-96 lg:h-[500px] overflow-hidden fade-in-up"
+          >
             <img
               src="images/jly.webp"
               alt="理疗仪器展示"
@@ -348,6 +331,32 @@
               <p class="text-gray-700 leading-relaxed pl-6">
                 结合现代科技与中医经络理论，用于全身肌肉放松、经络疏通及气血循环。
               </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-in-up">
+              <div class="bg-warm-gray rounded-2xl p-6">
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 flex items-center"
+                >
+                  <span class="w-2 h-8 bg-secondary rounded-full mr-4"></span>
+                  合适人群
+                </h3>
+                <p class="text-gray-700 leading-relaxed pl-6">
+                  亚健康状态者、长期疲劳、失眠、肩颈腰腿酸痛者、痛风。
+                </p>
+              </div>
+
+              <div class="bg-warm-gray rounded-2xl p-6">
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 flex items-center"
+                >
+                  <span class="w-2 h-8 bg-red-400 rounded-full mr-4"></span>
+                  禁忌人群
+                </h3>
+                <p class="text-gray-700 leading-relaxed pl-6">
+                  孕妇、心脏病装有起搏器者、癫痫患者、皮肤破损或感染者。
+                </p>
+              </div>
             </div>
           </div>
         </div>
