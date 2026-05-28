@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./output.css --minify"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
   },
   "repository": {
     "type": "git",
