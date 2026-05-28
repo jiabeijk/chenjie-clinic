@@ -124,16 +124,14 @@ async function handleFormSubmit(event) {
 
   try {
     // 发送到 Cloudflare Worker
-    const response = await fetch(
-      "https://clinic-booking-api.jiabeijk.workers.dev",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    const response = await fetch("/", {
+      // ✅ 改为 "/"
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify(formData),
+    });
 
     if (!response.ok) {
       throw new Error("提交失败，请重试");
@@ -146,10 +144,14 @@ async function handleFormSubmit(event) {
     bookingForm.reset();
   } catch (error) {
     console.error("提交错误:", error);
-    alert("提交失败，请稍后重试。如果问题持续，请直接电话联系陈姐。");
+    // 给用户更具体的提示
+    alert("提交失败，请检查网络后重试。如多次失败，可直接电话联系陈姐。");
+    // 不启动长冷却，仅恢复按钮状态
+    submitBtn.disabled = false;
+    submitBtn.textContent = "提交预约";
   } finally {
-    // 开启 60 秒冷却倒计时
-    let countdown = 60;
+    // 开启 10 秒冷却倒计时
+    let countdown = 10;
     submitBtn.textContent = `操作频繁 (${countdown}s)`;
 
     const timer = setInterval(() => {
