@@ -122,6 +122,8 @@ async function handleFormSubmit(event) {
   submitBtn.disabled = true;
   submitBtn.innerHTML = '<span class="loading-spinner"></span> 提交中...';
 
+  let submitSuccess = false;
+
   try {
     // 发送到 Cloudflare Worker
     const response = await fetch("https://api.ipeep.art", {
@@ -134,6 +136,8 @@ async function handleFormSubmit(event) {
       throw new Error("提交失败，请重试");
     }
 
+    submitSuccess = true;
+
     // 提交成功，显示模态框
     showSuccessModal();
 
@@ -143,22 +147,24 @@ async function handleFormSubmit(event) {
     console.error("提交错误:", error);
     // 给用户更具体的提示
     alert("提交失败，请检查网络后重试。如多次失败，可直接电话联系陈姐。");
-    // 不启动长冷却，仅恢复按钮状态
-    submitBtn.disabled = false;
-    submitBtn.textContent = "提交预约";
   } finally {
-    // 开启 10 秒冷却倒计时
+    // 开启 10 秒冷却倒计时，防止重复提交
     let countdown = 10;
-    submitBtn.textContent = `操作频繁 (${countdown}s)`;
+    submitBtn.disabled = true;
+    submitBtn.textContent = submitSuccess
+      ? `已提交 (${countdown}s)`
+      : `请稍候 (${countdown}s)`;
 
     const timer = setInterval(() => {
       countdown--;
       if (countdown <= 0) {
         clearInterval(timer);
-        submitBtn.disabled = false; // 60秒后才能再次点击
+        submitBtn.disabled = false;
         submitBtn.textContent = "提交预约";
       } else {
-        submitBtn.textContent = `操作频繁 (${countdown}s)`;
+        submitBtn.textContent = submitSuccess
+          ? `已提交 (${countdown}s)`
+          : `请稍候 (${countdown}s)`;
       }
     }, 1000);
   }
