@@ -1,5 +1,5 @@
 // ==========================================
-// 陈姐理疗室 - 主交互脚本
+// 陈姐·理疗馆 - 主交互脚本
 // ==========================================
 
 // Cloudflare Worker URL 占位符
@@ -224,5 +224,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初始检查导航栏状态
   handleNavbarScroll();
 
-  console.log("陈姐理疗室官网已加载完成");
+  console.log("陈姐·理疗馆官网已加载完成");
 });

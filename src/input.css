@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #D4A373;
-  --color-primary-dark: #B8864E;
-  --color-secondary: #8A9A5B;
-  --color-cream: #FFF8F0;
-  --color-warm-gray: #F5F0EB;
+  --color-primary: #2D5A45;
+  --color-primary-dark: #1A3D2E;
+  --color-primary-light: #3E7059;
+  --color-gold: #C9A961;
+  --color-gold-dark: #A8863D;
+  --color-cream: #FAF6EF;
+  --color-warm-gray: #EDE7DD;
+  --color-ink: #1C2B24;
+  --font-serif: "Songti SC", "STSong", "SimSun", "Noto Serif SC", serif;
 }

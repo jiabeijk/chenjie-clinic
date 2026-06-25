@@ -1,5 +1,5 @@
 /* ==========================================
-   自定义动画与样式
+   陈姐·理疗馆 - 自定义动画与样式
    ========================================== */
 
 /* 淡入上移动画 - 初始状态 */
@@ -17,10 +17,10 @@
 
 /* 导航栏毛玻璃效果 */
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(250, 246, 239, 0.85) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(28, 43, 36, 0.08);
 }
 
 /* 平滑滚动 */
@@ -33,7 +33,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3);
+  box-shadow: 0 0 0 3px rgba(45, 90, 69, 0.2);
 }
 
 /* 按钮点击反馈 */
@@ -95,16 +95,16 @@ button:active {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #EDE7DD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4A373;
+  background: #2D5A45;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8864E;
+  background: #1A3D2E;
 }
 
 /* 移动端菜单动画 */
@@ -127,19 +127,19 @@ button:active {
   }
 }
 
-/* 卡片悬停效果增强 */
+/* 卡片悬停效果 */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(28, 43, 36, 0.1);
 }
 
-/* 渐变文字效果（可选） */
+/* 渐变文字效果 */
 .gradient-text {
-  background: linear-gradient(135deg, #D4A373 0%, #8A9A5B 100%);
+  background: linear-gradient(135deg, #2D5A45 0%, #C9A961 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -150,7 +150,7 @@ button:active {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     background: white;
   }
