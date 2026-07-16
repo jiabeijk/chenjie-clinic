@@ -21,11 +21,12 @@ const modalCloseBtn = document.getElementById("modal-close-btn");
 // 导航栏滚动效果
 // ==========================================
 let lastScrollY = 0;
+let isMobileMenuOpen = false;
 
 function handleNavbarScroll() {
   const currentScrollY = window.scrollY;
 
-  if (currentScrollY > 50) {
+  if (currentScrollY > 50 || isMobileMenuOpen) {
     navbar.classList.add("navbar-scrolled");
   } else {
     navbar.classList.remove("navbar-scrolled");
@@ -39,8 +40,6 @@ window.addEventListener("scroll", handleNavbarScroll, { passive: true });
 // ==========================================
 // 移动端菜单切换
 // ==========================================
-let isMobileMenuOpen = false;
-
 function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
 
@@ -51,6 +50,8 @@ function toggleMobileMenu() {
     mobileMenu.classList.add("hidden");
     menuIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
   }
+
+  handleNavbarScroll();
 }
 
 mobileMenuBtn.addEventListener("click", toggleMobileMenu);
