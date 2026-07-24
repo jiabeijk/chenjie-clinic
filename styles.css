@@ -192,6 +192,44 @@ button:active {
   line-height: 1.75;
 }
 
+/* 禁忌提醒：醒目警示样式 */
+.principle-card--warning {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  background: linear-gradient(135deg, #fef4f2 0%, #fde8e4 100%);
+  box-shadow: 0 16px 40px rgba(185, 28, 28, 0.14);
+}
+
+.principle-card--warning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.principle-card--warning h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #b91c1c;
+}
+
+.principle-card--warning h3 svg {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #dc2626;
+}
+
+.principle-card--warning p {
+  color: rgba(127, 29, 29, 0.82);
+  font-weight: 500;
+}
+
 /* 打印样式优化 */
 @media print {
   .no-print {

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>陈姐·理疗馆 — 暑期特惠代金券（140mm × 68mm）</title>
+    <style>
+      /* ==========================================
+         陈姐·理疗馆 暑期特惠代金券
+         成品尺寸：140mm(横) × 68mm(竖)
+         正面 + 背面，可直接打印
+         ========================================== */
+      :root {
+        --green: #2d5a45;
+        --green-deep: #1c2b24;
+        --green-dark: #234738;
+        --gold: #d9b36a;
+        --gold-bright: #f2d492;
+        --cream: #faf6ef;
+        --ink: #1c2b24;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #e8e4dc;
+        font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10mm;
+        padding: 12mm 0;
+      }
+
+      .side-label {
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        color: #8a857a;
+        text-transform: uppercase;
+      }
+
+      /* ---------- 券面通用 ---------- */
+      .coupon {
+        width: 140mm;
+        height: 68mm;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        border-radius: 3mm;
+        box-shadow: 0 6px 30px rgba(28, 43, 36, 0.25);
+      }
+
+      /* ==========================================
+         正面
+         ========================================== */
+      .coupon-front {
+        background: linear-gradient(
+          115deg,
+          var(--green-deep) 0%,
+          var(--green) 55%,
+          var(--green-dark) 100%
+        );
+        color: #fff;
+      }
+
+      /* 背景装饰光斑 */
+      .coupon-front::before {
+        content: "";
+        position: absolute;
+        width: 60mm;
+        height: 60mm;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(217, 179, 106, 0.28),
+          transparent 70%
+        );
+        top: -25mm;
+        right: 18mm;
+      }
+      .coupon-front::after {
+        content: "";
+        position: absolute;
+        width: 46mm;
+        height: 46mm;
+        border-radius: 50%;
+        border: 1px solid rgba(217, 179, 106, 0.35);
+        bottom: -22mm;
+        left: -12mm;
+      }
+
+      /* 主信息区 */
+      .front-main {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        padding: 6mm 0 5mm 8mm;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .front-brand {
+        display: flex;
+        align-items: center;
+        gap: 2.5mm;
+        font-size: 8.5pt;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .front-brand .dot {
+        width: 1.6mm;
+        height: 1.6mm;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .front-brand .en {
+        font-size: 5pt;
+        letter-spacing: 0.28em;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* 暑期特惠 —— 最醒目 */
+      .front-promo {
+        margin-top: 2.5mm;
+        font-size: 25pt;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        background: linear-gradient(
+          180deg,
+          #fff 20%,
+          var(--gold-bright) 75%,
+          var(--gold)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 1mm 3mm rgba(0, 0, 0, 0.35);
+        filter: drop-shadow(0 0.5mm 0 rgba(0, 0, 0, 0.15));
+      }
+
+      .front-tags {
+        margin-top: 2.8mm;
+        display: flex;
+        gap: 1.8mm;
+      }
+      .front-tags span {
+        font-size: 5.5pt;
+        padding: 1mm 2.2mm;
+        border-radius: 99px;
+        border: 0.35mm solid rgba(217, 179, 106, 0.55);
+        color: var(--gold-bright);
+        letter-spacing: 0.06em;
+      }
+
+      .front-slogan {
+        margin-top: auto;
+        font-size: 6.5pt;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.05em;
+      }
+      .front-slogan b {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* 右侧金额区（副券） */
+      .front-stub {
+        position: relative;
+        z-index: 2;
+        width: 42mm;
+        border-left: 0.5mm dashed rgba(255, 255, 255, 0.45);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      /* 撕票口半圆 */
+      .front-stub::before,
+      .front-stub::after {
+        content: "";
+        position: absolute;
+        left: -2.6mm;
+        width: 5mm;
+        height: 5mm;
+        border-radius: 50%;
+        background: #e8e4dc;
+      }
+      .front-stub::before {
+        top: -2.5mm;
+      }
+      .front-stub::after {
+        bottom: -2.5mm;
+      }
+
+      .stub-label {
+        font-size: 6pt;
+        letter-spacing: 0.35em;
+        color: var(--gold-bright);
+        margin-bottom: 1mm;
+        text-indent: 0.35em;
+      }
+      .stub-price {
+        display: flex;
+        align-items: baseline;
+        color: #fff;
+        line-height: 1;
+      }
+      .stub-price .symbol {
+        font-size: 12pt;
+        font-weight: 700;
+        color: var(--gold-bright);
+        margin-right: 0.8mm;
+      }
+      .stub-price .num {
+        font-size: 34pt;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+      .stub-note {
+        margin-top: 1.6mm;
+        font-size: 5pt;
+        color: rgba(255, 255, 255, 0.55);
+        letter-spacing: 0.08em;
+      }
+
+      /* ==========================================
+         背面
+         ========================================== */
+      .coupon-back {
+        background: var(--cream);
+        color: var(--ink);
+        border: 0.4mm solid rgba(45, 90, 69, 0.25);
+      }
+
+      .back-main {
+        flex: 1;
+        padding: 5mm 4mm 4.5mm 8mm;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .back-title {
+        display: flex;
+        align-items: baseline;
+        gap: 2.5mm;
+      }
+      .back-title h2 {
+        font-size: 10pt;
+        font-weight: 800;
+        color: var(--green);
+        letter-spacing: 0.08em;
+      }
+      .back-title span {
+        font-size: 5pt;
+        letter-spacing: 0.2em;
+        color: rgba(28, 43, 36, 0.45);
+      }
+
+      .back-services {
+        margin-top: 2.5mm;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4mm;
+      }
+      .back-services span {
+        font-size: 5.5pt;
+        color: var(--green-dark);
+        background: rgba(45, 90, 69, 0.08);
+        border-radius: 99px;
+        padding: 0.9mm 2.2mm;
+      }
+
+      .back-rules {
+        margin-top: auto;
+        font-size: 4.8pt;
+        line-height: 1.65;
+        color: rgba(28, 43, 36, 0.6);
+      }
+      .back-rules b {
+        color: var(--green);
+      }
+
+      .back-contact {
+        margin-top: 2mm;
+        padding-top: 2mm;
+        border-top: 0.3mm solid rgba(45, 90, 69, 0.18);
+        font-size: 5.5pt;
+        color: rgba(28, 43, 36, 0.75);
+        display: flex;
+        flex-direction: column;
+        gap: 0.8mm;
+      }
+      .back-contact b {
+        color: var(--green);
+        font-size: 6.5pt;
+      }
+
+      /* 背面右侧二维码区 */
+      .back-qr {
+        width: 40mm;
+        background: var(--green);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2mm;
+        color: #fff;
+      }
+      .back-qr img {
+        width: 24mm;
+        height: 24mm;
+        border-radius: 1.5mm;
+        background: #fff;
+        padding: 1.2mm;
+      }
+      .back-qr p {
+        font-size: 5pt;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .back-qr .promo-mini {
+        font-size: 6.5pt;
+        font-weight: 700;
+        color: var(--gold-bright);
+        letter-spacing: 0.15em;
+      }
+
+      /* ==========================================
+         打印设置
+         ========================================== */
+      @page {
+        size: 140mm 68mm;
+        margin: 0;
+      }
+      @media print {
+        body {
+          background: none;
+          padding: 0;
+          gap: 0;
+        }
+        .side-label {
+          display: none;
+        }
+        .coupon {
+          box-shadow: none;
+          border-radius: 0;
+          page-break-after: always;
+        }
+        .coupon:last-child {
+          page-break-after: auto;
+        }
+        .front-stub::before,
+        .front-stub::after {
+          background: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="side-label">正面 · Front · 140mm × 68mm</p>
+
+    <!-- ============ 正面 ============ -->
+    <div class="coupon coupon-front">
+      <div class="front-main">
+        <div class="front-brand">
+          <span class="dot"></span>
+          陈姐·理疗馆
+          <span class="en">MODERN WELLNESS SPA</span>
+        </div>
+
+        <h1 class="front-promo">暑期特惠</h1>
+
+        <div class="front-tags">
+          <span>经络疏通</span>
+          <span>微电流理疗</span>
+          <span>排湿排寒</span>
+          <span>肩颈腰背</span>
+        </div>
+
+        <p class="front-slogan">
+          凭券到店任意理疗项目<b>立减 ¥50</b> · 先沟通，再体验
+        </p>
+      </div>
+
+      <div class="front-stub">
+        <p class="stub-label">代金券</p>
+        <div class="stub-price">
+          <span class="symbol">¥</span>
+          <span class="num">50</span>
+        </div>
+        <p class="stub-note">数量有限 · 送完即止</p>
+      </div>
+    </div>
+
+    <p class="side-label">背面 · Back · 140mm × 68mm</p>
+
+    <!-- ============ 背面 ============ -->
+    <div class="coupon coupon-back">
+      <div class="back-main">
+        <div class="back-title">
+          <h2>暑期特惠 · 50元代金券</h2>
+          <span>SUMMER SPECIAL</span>
+        </div>
+
+        <div class="back-services">
+          <span>肩颈疼痛</span>
+          <span>腰椎间盘突出</span>
+          <span>富贵包</span>
+          <span>静脉曲张</span>
+          <span>经络疏通</span>
+          <span>排湿排寒</span>
+          <span>妇科养护</span>
+        </div>
+
+        <div class="back-rules">
+          <b>使用须知</b><br />
+          1. 本券可抵扣任意单次理疗项目费用 50 元，不兑换现金、不找零；<br />
+          2. 每人每次限用一张，需提前电话或微信预约，到店出示本券；<br />
+          3. 本活动最终解释权归本店所有，有效期至 2026 年 8 月 31 日。
+        </div>
+
+        <div class="back-contact">
+          <span>健康热线：<b>陈姐 183 7363 7791</b></span>
+          <span>地址：武陵区人民东路饲料厂员工宿舍3栋1楼4号门面</span>
+        </div>
+      </div>
+
+      <div class="back-qr">
+        <p class="promo-mini">暑期特惠</p>
+        <img src="images/qrcode.png" alt="微信客服二维码" />
+        <p>扫码咨询 · 在线预约</p>
+      </div>
+    </div>
+  </body>
+</html>

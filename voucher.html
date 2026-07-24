@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暑期特价 · 50元代金券预览</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FAF6EF 0%, #ffffff 50%, #E8F5E9 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #1C2B24;
+    }
+    
+    .page-title {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+      letter-spacing: 0.1em;
+    }
+
+    .voucher-card {
+      width: 360px;
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(45, 90, 69, 0.15), 0 10px 25px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    /* 顶部装饰 */
+    .voucher-header {
+      background: linear-gradient(135deg, #2D5A45 0%, #3D7A5A 100%);
+      padding: 28px 24px 22px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .voucher-header::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      background: rgba(201, 169, 97, 0.2);
+      border-radius: 50%;
+    }
+    .voucher-header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+    
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .tag {
+      background: #C9A961;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(201, 169, 97, 0.3);
+    }
+    .sub-title {
+      margin-top: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.08em;
+    }
+
+    /* 主体内容 */
+    .voucher-body {
+      padding: 28px 24px 22px;
+      position: relative;
+    }
+
+    .summer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+      color: #A8863D;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 30px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(201, 169, 97, 0.25);
+    }
+    .summer-badge::before {
+      content: "☀";
+    }
+
+    .main-offer {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .price-now {
+      font-size: 72px;
+      font-weight: 800;
+      color: #2D5A45;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .price-now span {
+      font-size: 28px;
+      margin-right: 4px;
+    }
+    .price-origin {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .save-tag {
+      display: inline-block;
+      margin-top: 10px;
+      background: #E8F5E9;
+      color: #2D5A45;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .coupon-value {
+      background: linear-gradient(135deg, #2D5A45 0%, #1A3D2E 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .coupon-value::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .coupon-value::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .coupon-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 4px;
+    }
+    .coupon-amount {
+      font-size: 36px;
+      font-weight: 800;
+      color: #C9A961;
+    }
+
+    .info-section {
+      border-top: 1px dashed #EDE7DD;
+      padding-top: 18px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .info-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: #E8F5E9;
+      color: #2D5A45;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .qr-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding: 14px;
+      background: #FAF6EF;
+      border-radius: 14px;
+    }
+    .qr-text {
+      flex: 1;
+    }
+    .qr-text p:first-child {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1C2B24;
+      margin-bottom: 4px;
+    }
+    .qr-text p:last-child {
+      font-size: 12px;
+      color: #888;
+    }
+    .qr-placeholder {
+      width: 72px;
+      height: 72px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 11px;
+      border: 1px dashed #ddd;
+      text-align: center;
+    }
+
+    .footer-note {
+      background: #F5F5F5;
+      padding: 12px 24px;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* 操作按钮 */
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-primary {
+      background: #2D5A45;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1A3D2E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(45, 90, 69, 0.25);
+    }
+    .btn-secondary {
+      background: white;
+      color: #2D5A45;
+      border: 1.5px solid #2D5A45;
+    }
+    .btn-secondary:hover {
+      background: #E8F5E9;
+    }
+
+    /* 打印优化 */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page-title, .actions { display: none; }
+      .voucher-card {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 420px) {
+      .voucher-card { width: 100%; max-width: 360px; }
+      .price-now { font-size: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <p class="page-title">代金券预览 · 按 Ctrl+P 可打印或截图保存</p>
+
+  <div class="voucher-card">
+    <!-- 头部 -->
+    <div class="voucher-header">
+      <div class="brand-row">
+        <div>
+          <div class="brand-name">陈姐 · 理疗馆</div>
+          <div class="sub-title">MODERN WELLNESS SPA</div>
+        </div>
+        <div class="tag">暑期特价</div>
+      </div>
+    </div>
+
+    <!-- 主体 -->
+    <div class="voucher-body">
+      <div class="summer-badge">限时清凉价，给身体放个假</div>
+
+      <div class="main-offer">
+        <div class="price-now"><span>¥</span>68</div>
+        <div class="price-origin">原价 ¥118 / 次</div>
+        <div class="save-tag">新客户到店立省 50 元</div>
+      </div>
+
+      <div class="coupon-value">
+        <div class="coupon-label">本券可抵</div>
+        <div class="coupon-amount">¥50 代金券</div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-row">
+          <div class="info-icon">✆</div>
+          <div>健康热线：陈姐 183 7363 7791</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">⌖</div>
+          <div>地址：武陵区人民东路饲料厂员工宿舍3栋1楼4号门面</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">i</div>
+          <div>单次部位体验价，到店沟通确认具体项目</div>
+        </div>
+      </div>
+
+      <div class="qr-area">
+        <div class="qr-text">
+          <p>扫码添加微信客服</p>
+          <p>在线预约 · 提前沟通身体情况</p>
+        </div>
+        <div class="qr-placeholder">二维码<br>区域</div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      本券最终解释权归陈姐·理疗馆所有 · 不与其他优惠同享
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" onclick="window.print()">打印 / 保存为 PDF</button>
+    <button class="btn btn-secondary" onclick="copyInfo()">复制文案</button>
+  </div>
+
+  <script>
+    function copyInfo() {
+      const text = `🌿 陈姐·理疗馆 · 暑期特价\n💰 原价 ¥118，现在只需 ¥68\n🎫 再送 ¥50 代金券，新客户到店立省\n☎ 健康热线：183 7363 7791\n📍 地址：武陵区人民东路饲料厂员工宿舍3栋1楼4号门面\n✨ 单次部位体验价，到店沟通确认项目`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('文案已复制，可直接粘贴到朋友圈/微信群');
+      }).catch(() => {
+        alert('复制失败，请手动截图');
+      });
+    }
+  </script>
+</body>
+</html>
